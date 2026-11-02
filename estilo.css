@@ -1,0 +1,267 @@
+
+:root {
+    --cor-principal: #23395B;
+    --cor-destaque: #A84B33;
+    --cor-fundo: #FFF8F0;
+    --cor-texto: #333333;
+    --cor-cartao: #FFFFFF;
+    --cor-borda: #E5DED3;
+    --cor-clara: #FFFFFF;
+    --raio: 12px;
+}
+
+body.tema-alternativo {
+    --cor-principal: #294936;
+    --cor-destaque: #8A4D76;
+    --cor-fundo: #F3F7F1;
+    --cor-texto: #26352B;
+    --cor-cartao: #FFFFFF;
+    --cor-borda: #D5E0D2;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: var(--cor-principal);
+    font-family: "Lora", Georgia, serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+p {
+    margin-top: 0;
+}
+
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+section {
+    padding: 1.5rem 0;
+}
+
+a {
+    color: var(--cor-principal);
+}
+
+.cabecalho {
+    padding: 2rem;
+    background: var(--cor-principal);
+    color: var(--cor-clara);
+    text-align: center;
+}
+
+.cabecalho h1,
+.cabecalho p {
+    color: var(--cor-clara);
+}
+
+.cabecalho h1 {
+    margin-top: 0;
+}
+
+.menu {
+    padding: 1rem 2rem;
+    background: var(--cor-cartao);
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    color: var(--cor-principal);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: var(--cor-destaque);
+}
+
+.menu li:first-child {
+    font-weight: bold;
+}
+
+.destaque {
+    color: var(--cor-destaque);
+    font-weight: bold;
+}
+
+.cartao {
+    padding: 1.5rem;
+    background: var(--cor-cartao);
+    border: 1px solid var(--cor-borda);
+    border-left: 6px solid var(--cor-destaque);
+    border-radius: var(--raio);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cartao h3 {
+    margin-top: 0;
+}
+
+.cartao:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgb(0 0 0 / 0.15);
+}
+
+.aviso {
+    padding: 1.5rem;
+    background: linear-gradient(90deg, #E07A5F, #F2CC8F);
+    border-radius: var(--raio);
+}
+
+.aviso p {
+    font-weight: bold;
+}
+
+.botao {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    background: var(--cor-destaque);
+    color: var(--cor-clara);
+    border-radius: var(--raio);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.botao:hover {
+    background: var(--cor-principal);
+    color: var(--cor-clara);
+}
+
+.botao:active {
+    transform: translateY(2px);
+}
+
+.layout {
+    display: block;
+}
+
+.cartoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.cartoes .cartao {
+    flex: 1 1 250px;
+}
+
+.lateral {
+    padding: 1rem;
+}
+
+.lateral .cartao {
+    margin-bottom: 1rem;
+}
+
+.rodape {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: var(--cor-principal);
+    color: var(--cor-clara);
+}
+
+.rodape section {
+    flex: 1 1 200px;
+}
+
+.rodape h3,
+.rodape p {
+    color: var(--cor-clara);
+}
+
+.credito {
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--cor-principal);
+    outline-offset: 3px;
+}
+
+.layout {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .cabecalho {
+        text-align: left;
+    }
+
+    .menu ul {
+        justify-content: flex-end;
+    }
+
+    .layout {
+        display: block;
+    }
+}
+
+@media (min-width: 1024px) {
+    .layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 280px;
+        grid-template-areas: "conteudo lateral";
+        gap: 1rem;
+        max-width: 1240px;
+        margin: 0 auto;
+    }
+
+    main {
+        grid-area: conteudo;
+        width: 100%;
+    }
+
+    aside {
+        grid-area: lateral;
+    }
+
+    .cartoes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cartoes .destaque {
+        grid-column: span 2;
+    }
+}
