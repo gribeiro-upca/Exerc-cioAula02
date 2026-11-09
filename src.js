@@ -7,11 +7,13 @@ let hora = 11;
 let aberta;
 
 //Exercício 2
+console.log("--- Testes Exercício 2 ---");
 livros = livros-3;
 console.log(nome.toUpperCase()); 
 console.log("A biblioteca do Bairro tem " + livros + " livros disponíveis.");
 
 //Exercício 3
+console.log("--- Testes Exercício 3 ---");
 if (dia === "Domingo")
 {
 aberta = false;
@@ -24,6 +26,7 @@ aberta = false;
 console.log(aberta? "Aberta" : "Fechada");
 
 //Exercício 4
+console.log("--- Testes Exercício 4 ---");
 function calcularMulta(dias) {
     return dias > 15 ? (dias -15) *0.5 : 0;
 }
@@ -33,13 +36,14 @@ function formatarEuros(valor) {
 function mensagemMulta (dias) {
     const multa = calcularMulta(dias);
     if (multa == 0) return "Sem multa";
-    return 'Multa a pagar: ${formatarEuros(multa)}';
+    return `Multa a pagar: ${formatarEuros(multa)}`;
 }
 
 console.log(mensagemMulta(10));
 console.log(mensagemMulta(20));
 
 //Exercício 5
+console.log("--- Testes Exercício 5 ---");
 const livrosa = ["Os Maias", "Mensagem", "A Sibila", "Os Lusíadas", "Aparição"];
 livrosa.push("Memorial do Convento", "Ensaio sobre a Cegueira");
 console.log(livrosa.length);
